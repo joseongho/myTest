@@ -1,11 +1,15 @@
 package com.mySpring.www;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import myModel.MyDiary;
 import myService.MyDiaryService;
 
 @Controller
@@ -25,5 +29,17 @@ public class MyDiaryController {
 	public String writeDiary() {
 
 		return "diary/writeDiary";
+	}
+
+	@RequestMapping("/diary/selectTitleDate")
+	public String selectTitleDate(Model model) {
+		model = myDiaryService.selectTitleDate(model);
+		return "diary/selectTitleDate";
+	}
+
+	@RequestMapping("/diary/selectNumber")
+	public String selectNumber(Model model,HttpServletRequest request) {
+		model = myDiaryService.selectNumber(model,request);
+		return "diary/selectNumber";
 	}
 }

@@ -1,11 +1,13 @@
 package myService;
 
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import myDao.MyDiaryDao;
 import myModel.MyDiary;
@@ -31,5 +33,26 @@ public class MyDiaryServiceImpl implements MyDiaryService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public Model selectTitleDate(Model model) {
+		List<MyDiary> list = myDiaryDao.selectTitleDate();
+		model.addAttribute("list", list);
+		return model;
+	}
+
+	@Override
+	public Model selectNumber(Model model, HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		try {
+			request.setCharacterEncoding("utf-8");
+			myDiary.setNumber(Integer.parseInt(request.getParameter("number")));
+			model.addAttribute("diary", myDiaryDao.selectNumber(myDiary));
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return model;
 	}
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -5,16 +6,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href=<c:url value="/resources/styles.css"/>>
 </head>
 <body>
-	<form action="/www/diary/insertdiary" method="post">
-		<label>title</label> <input type="text" name="title" maxlength="45" />
-		<label>content</label> <input type="text" name="content"
-			maxlength="500" /> <label>goodThing</label><input type="text"
-			name="goodThing" maxlength="45" /> <label>badThing</label><input
-			type="text" name="badThing" maxlength="45" /> <label>toDo</label><input
-			type="text" name="toDo" maxlength="45" /> <input type="submit" />
-	</form>
-
+	<div id="container">
+		<%@ include file="/header.jsp"%>
+		<%@ include file="/navigation.jsp"%>
+		<div id="article">
+			<form action="/www/diary/insertdiary" method="post">
+				<p>title</p>
+				<input type="text" name="title" maxlength="45" />
+				<p>content</p>
+				<textarea name="content" rows="20"></textarea>
+				<p>goodThing</p>
+				<input type="text" name="goodThing" maxlength="45" />
+				<p>badThing</p>
+				<input type="text" name="badThing" maxlength="45" />
+				<p>toDo</p>
+				<input type="text" name="toDo" maxlength="45" /> <input
+					type="submit" />
+			</form>
+		</div>
+		<%@ include file="/footer.jsp"%>
+	</div>
 </body>
 </html>
