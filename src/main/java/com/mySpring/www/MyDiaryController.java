@@ -19,7 +19,6 @@ public class MyDiaryController {
 
 	@RequestMapping(value = "/diary/insertdiary")
 	public String insertDiary(HttpServletRequest request) {
-
 		myDiaryService.writeDiary(request);
 
 		return "home";
@@ -38,8 +37,8 @@ public class MyDiaryController {
 	}
 
 	@RequestMapping("/diary/selectNumber")
-	public String selectNumber(Model model,HttpServletRequest request) {
-		model = myDiaryService.selectNumber(model,request);
+	public String selectNumber(Model model, HttpServletRequest request) {
+		model = myDiaryService.selectNumber(model, request);
 		return "diary/selectNumber";
 	}
 }

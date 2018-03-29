@@ -19,11 +19,11 @@
 				<p>content</p>
 				<textarea name="content" rows="20"></textarea>
 				<p>goodThing</p>
-				<input type="text" name="goodThing" maxlength="45" />
+				<input type="text" name="goodthing" maxlength="45" />
 				<p>badThing</p>
-				<input type="text" name="badThing" maxlength="45" />
+				<input type="text" name="badthing" maxlength="45" />
 				<p>toDo</p>
-				<input type="text" name="toDo" maxlength="45" /> <input
+				<input type="text" name="todo" maxlength="45" /> <input
 					type="submit" />
 			</form>
 		</div>

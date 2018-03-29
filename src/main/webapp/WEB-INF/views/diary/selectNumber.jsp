@@ -16,11 +16,16 @@
 		<p>title : ${diary.getTitle()}</p>
 		<p>date : ${diary.getDate()}</p>
 		<p>content</p>
-		<textarea rows="" readonly="readonly">${diary.getContent()}</textarea>
-		<p>goodthing : ${diary.getGoodThing()}</p>
-		<p>badthing : ${diary.getBadThing()}</p>
-		<p>todo : ${diary.getToDo()}</p>
+		<textarea id="test" readonly="readonly">${diary.getContent()}</textarea>
+		<p>goodthing : ${diary.getGoodthing()}</p>
+		<p>badthing : ${diary.getBadthing()}</p>
+		<p>todo : ${diary.getTodo()}</p>
 	</div>
 	<%@ include file="/footer.jsp"%>
-</body>
+	<script>
+	function resize(){
+		
+	}
+	</script>
+</body onload="resize()">
 </html>

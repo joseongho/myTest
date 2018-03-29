@@ -1,6 +1,5 @@
 package myService;
 
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -21,18 +20,13 @@ public class MyDiaryServiceImpl implements MyDiaryService {
 
 	@Override
 	public void writeDiary(HttpServletRequest request) {
-		try {
-			request.setCharacterEncoding("UTF-8");
-			myDiary.setTitle(request.getParameter("title"));
-			myDiary.setContent(request.getParameter("content"));
-			myDiary.setGoodThing(request.getParameter("goodThing"));
-			myDiary.setBadThing(request.getParameter("badThing"));
-			myDiary.setToDo(request.getParameter("toDo"));
-			myDiaryDao.insertDiary(myDiary);
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		myDiary.setTitle(request.getParameter("title"));
+		myDiary.setContent(request.getParameter("content"));
+		myDiary.setGoodthing(request.getParameter("goodthing"));
+		myDiary.setBadthing(request.getParameter("badthing"));
+		myDiary.setTodo(request.getParameter("todo"));
+		myDiaryDao.insertDiary(myDiary);
+
 	}
 
 	@Override
@@ -45,14 +39,10 @@ public class MyDiaryServiceImpl implements MyDiaryService {
 	@Override
 	public Model selectNumber(Model model, HttpServletRequest request) {
 		// TODO Auto-generated method stub
-		try {
-			request.setCharacterEncoding("utf-8");
-			myDiary.setNumber(Integer.parseInt(request.getParameter("number")));
-			model.addAttribute("diary", myDiaryDao.selectNumber(myDiary));
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		myDiary.setNumber(Integer.parseInt(request.getParameter("number")));
+		model.addAttribute("diary", myDiaryDao.selectNumber(myDiary));
+
 		return model;
 	}
 }
