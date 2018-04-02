@@ -36,4 +36,8 @@ public class HomeController {
 		return "home";
 	}
 
+	@RequestMapping(value = "/error")
+	public void error() throws Exception {
+		throw new Exception();
+	}
 }

@@ -23,9 +23,7 @@
 	</div>
 	<%@ include file="/footer.jsp"%>
 	<script>
-	function resize(){
 		
-	}
 	</script>
-</body onload="resize()">
+</body>
 </html>
