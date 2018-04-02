@@ -40,4 +40,9 @@ public class HomeController {
 	public void error() throws Exception {
 		throw new Exception();
 	}
+
+	@RequestMapping(value = "/error2")
+	public void error2() {
+		throw new RuntimeException();
+	}
 }

@@ -9,6 +9,8 @@
 	<div id="navigation">
 		<a href="/www">home</a> <a href="/www/diary/writeDiary">writeDiary</a>
 		<a href="/www/diary/selectTitleDate">list</a>
+		<a href="/www/error">error</a>
+		<a href="/www/error2">error2</a>
 	</div>
 </body>
 </html>
